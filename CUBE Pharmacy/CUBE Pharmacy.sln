@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "CUBE Pharmacy", "CUBE Pharmacy.dwproj", "{998AC738-A76C-4833-AEAA-C0F3F7999E92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{998AC738-A76C-4833-AEAA-C0F3F7999E92}.Development|Default.ActiveCfg = Development
+		{998AC738-A76C-4833-AEAA-C0F3F7999E92}.Development|Default.Build.0 = Development
+		{998AC738-A76C-4833-AEAA-C0F3F7999E92}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADF9DD1A-3CF1-4C0F-9969-D290E7F07998}
+	EndGlobalSection
+EndGlobal

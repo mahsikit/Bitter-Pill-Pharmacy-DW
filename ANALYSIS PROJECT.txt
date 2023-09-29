@@ -1,0 +1,128 @@
+MEASUREMENT
+-------------------------
+medicine purchase transaction 
+Total Purchase Cost = SUM(Quantity*MedicinePurchasePrice)
+Total Purchased Medicine = SUM(Quantity)
+
+medicine sales transaction 
+Total Medicine Sales Earning = SUM(Quantity*MedicineSellingPrice)
+Total Medicine Sold = SUM(Quantity)
+
+medical equipment sales transaction 
+Total Medical Equipment Sales Earning = SUM(Quantity*EquipmentPrice)
+Average Medical Equipment Sold = AVG(Quantity)
+
+consultation transaction 
+Average consultation price = AVG(ConsultationPrice)
+Customer consultation count = COUNT(ConsultationId)
+
+DIMENSION
+------------------------
+CustomerDimension 
+CustomerCode - PK
+CustomerId - Business Key
+CustomerName
+CustomerGender - Derived Column (Female -> F, Male -> M)
+CustomerDOB
+CustomerAddress - Changing
+CustomerPhoneNumber - Changing
+CustomerEmail
+
+EmployeeDimension 
+EmployeeCode - PK
+EmployeeId - Business Key
+EmployeeName 
+EmployeeSalary - Historical
+EmployeeGender - Derived Column (Female -> F, Male -> M)
+BranchName 
+CityName 
+ValidFrom
+ValidTo
+	
+DoctorDimension 
+DoctorCode - PK
+DoctorId - Business Key
+DoctorName
+DoctorEmail
+DoctorPhoneNumber - Changing
+
+SupplierDimension 
+SupplierCode - PK
+SupplierId - Business Key
+CityName
+SupplierName
+SupplierAddress - Changing
+
+MedicineDimension 
+MedicineCode - PK
+MedicineId - Business Key
+MedicineTypeName 
+MedicineName 
+MedicineSellingPrice - Historical
+MedicinePurchasePrice - Historical
+ValidFrom
+ValidTo
+
+EquipmentDimension 
+EquipmentCode - PK
+EquipmentId - Business Key
+EquipmentName
+EquipmentPrice - Historical
+EquipmentTypeName
+ValidFrom
+ValidTo
+
+BranchDimension 
+BranchCode - PK
+BranchId - Business Key
+CityName
+BranchName
+BranchAddress - Changing
+
+TimeDimension 
+TimeCode -> PK
+Date
+Day
+Month
+Quarter
+Year
+
+FACT
+------------------------
+MedicinePurchaseTransactionFact
+SupplierCode
+EmployeeCode
+BrachCode
+MedicineCode
+TimeCode
+Total Purchase Cost = SUM(Quantity*MedicinePurchasePrice)
+Total Purchased Medicine = SUM(Quantity)
+
+
+
+
+MedicineSalesTransactionFact 
+CustomerCode
+EmployeeCode
+BranchCode
+MedicineCode
+TimeCode
+Total Medicine Sales Earning = SUM(Quantity*MedicineSellingPrice)
+Total Medicine Sold = COUNT(MedicineId)
+
+
+MedicalEquipmentSalesTransactionFact 
+CustomerCode
+EmployeeCode
+EquipmentCode
+TimeCode
+Total Medical Equipment Sales Earning = SUM(Quantity*EquipmentPrice)
+Average Medical Equipment Sold = AVG(Quantity)
+
+
+ConsultationTransactionFact 
+CustomerCode
+DoctorCode
+TimeCode
+Average consultation price = AVG(ConsultationPrice)
+Customer consultation count = COUNT(ConsultationId)
